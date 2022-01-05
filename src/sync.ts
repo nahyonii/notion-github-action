@@ -161,7 +161,7 @@ function getPropertiesFromIssue(issue: Issue): CustomValueMap {
     Milestone: properties.text(milestone ? milestone.title : ''),
     Labels: properties.multiSelect(labelsObject ? labelsObject : []),
     Author: properties.text(author),
-    Created: properties.date(created_at),
+    Created: properties.date('2022-01-05'),
     Updated: properties.date(updated_at),
     ID: properties.number(id),
     Link: properties.url(html_url),
