@@ -26036,7 +26036,7 @@ function createMultiSelectObjects(issue) {
     return { assigneesObject, labelsObject };
 }
 function getPropertiesFromIssue(issue) {
-    const { number, title, state, id, milestone, created_at, updated_at, body, repository_url, user, html_url, } = issue;
+    const { number, title, state, id, milestone, updated_at, body, repository_url, user, html_url } = issue;
     const author = user === null || user === void 0 ? void 0 : user.login;
     const { assigneesObject, labelsObject } = createMultiSelectObjects(issue);
     const urlComponents = repository_url.split('/');
@@ -26054,7 +26054,7 @@ function getPropertiesFromIssue(issue) {
         Milestone: properties.text(milestone ? milestone.title : ''),
         Labels: properties.multiSelect(labelsObject ? labelsObject : []),
         Author: properties.text(author),
-        Created: properties.date(created_at),
+        Created: properties.date('2021'),
         Updated: properties.date(updated_at),
         ID: properties.number(id),
         Link: properties.url(html_url),
